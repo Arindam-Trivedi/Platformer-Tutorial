@@ -1,10 +1,9 @@
-using System.Collections; 
-using System.Collections.Generic; 
-using UnityEngine; 
-public class Platformer : MonoBehaviour 
-{ 
-    // Start is called before the first frame update 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
+public class SC_PlayerMovement : MonoBehaviour
+{
     Rigidbody2D rb;
     public float speed;
     public float jumpForce;
@@ -37,7 +36,7 @@ void Jump() {
     }
 }
 void CheckIfGrounded() { 
-    Collider2D colliders = Physics2D.OverlapCircle(isGroundedChecker.position, checkGroundRadius, groundLayer); 
+    Collider2D colliders = Physics2D.OverlapCircle(GroundedChecker.position, checkGroundRadius, groundLayer); 
     if (colliders != null) { 
         isGrounded = true; 
     } else { 
